@@ -24,3 +24,15 @@
 go.work
 
 # End of https://www.toptal.com/developers/gitignore/api/go
+# bin/
+tmp/
+__pycache__
+.terraform/
+*lock.hcl
+*.tfstate
+*.tfstate.backup
+volume
+builds/
+*.tfstate.lock.info
+localstack_providers_override.tf
+
