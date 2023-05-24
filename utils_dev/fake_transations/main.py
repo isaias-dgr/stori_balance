@@ -8,13 +8,13 @@ import os
 if __name__ == "__main__":
     client = boto3.client('s3')
     cont_general = 0
-    for m in range(1, 2):
-        start_date = date(2022, m, 1)
+    for m in range(1, 12):
+        start_date = date(2023, m, 1)
         end_date = None
         if m == 12:
-            end_date = date(2023, 1, 1)
+            end_date = date(2024, 1, 1)
         else:
-            end_date = date(2022, m+1, 1)
+            end_date = date(2023, m+1, 1)
         
         num_days = (end_date - start_date).days
         print(end_date, start_date, m, num_days)

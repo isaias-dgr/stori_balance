@@ -33,6 +33,7 @@ func NewStorage(b string, l *log.Logger) *Storage {
 func (s Storage) GetListFiles(address string) ([]string, error) {
 	result, err := s.client.ListObjects(&s3.ListObjectsInput{
 		Bucket: aws.String(s.bucket),
+		Prefix: aws.String(address),
 	})
 	if err != nil {
 		s.log.Errorf("failed to list objects %s", err.Error())
