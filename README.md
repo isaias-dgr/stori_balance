@@ -2,10 +2,26 @@
 
 ## Description
 
+Aplicacion para consumir archivos CSV Crear un reporte o Balance bancario  y ser enviado por email.
+
+- El sistema cuenta con dos lambdas.
+  - Lambda ingest-logs se ejecuta con un triger temporal cada mes. Este lambda consigue la lista de archivos con transacciones y envia la direcciones a una cola de mensajes.
+  - Lambda notify-balance se ejecuta con un triger de sqs. 
+      - Obtiene todas las transacciones las guarda en una instancia Mysql RDS .
+      - Crear un document(balance) con las transacciones ordenadas por fecha y por producto y es alojada en un bucket. (deberia ser un pdf pero fue html por cuestiones de tiempo)
+      - Envia notificacion con un resumen del balance y un elace presigned del archivo en S3.
+      - Envia un sms notificando el balance esta listo!.
+      - // TODO hacer que este lambda se ejecute cada que se crea un archivo con logs en s3.
+
 ![Ingest balances](https://github.com/isaias-dgr/stori_balance/assets/89608187/3bffb9d0-755c-4153-ba8d-1cb06e994ecc)
 [Ingest balances.pdf](https://github.com/isaias-dgr/stori_balance/files/11558977/Ingest.balances.pdf)
 
 ## Assumptions
+
+- Un sistema externo crear archivos csv por cada usuario del banco con las transacciones creadas en un mes
+- El archivo puede contener transacciones de varios productos (credito, debito etc).
+
+### Assumptions files
 
 Examples files cvs
 ``` bash 
@@ -31,14 +47,56 @@ Examples files cvs
 19,2ca03e45-8d0e-25b3-bce3-2b1d299c10cc,5048379029392553,5/21,WMT,404.33,Walmart
 20,2ca03e45-8d0e-25b3-bce3-2b1d299c10cc,5108758856586949,5/24,GEN,752.75,Generico
 ```
-
-
+## Outputs
 ![Screenshot from 2023-05-24 14-47-29](https://github.com/isaias-dgr/stori_balance/assets/89608187/d3bda605-ba0e-4cf6-8196-d9a5bb70653f)
 
 file:///home/isaias/Pictures/Screenshots/Screenshot%20from%202023-05-24%2014-47-59.png![image](https://github.com/isaias-dgr/stori_balance/assets/89608187/dfc68ed3-cd58-4394-a7c8-f96e9f155823)
 
+### TODO
+  - [ ] Crear archivos de configuracion para la creacion de contenedores docker
+  - [ ] Agregar transacciones en DB
+  - [ ] Unittest/Coverage
+  - [ ] Pipeline de despliegue
+  - [ ] API para crear dashboard
+  - [ ] Nuevo esquema para soportar S3 como trigger de Lambda
+  - [ ] Mejorar terraform files
+  - [ ] Crear migraciones automaticos
 
+## Requierments.
 
-### Lambda Consumer
-### API Balancer
+- Terraform
+- Golang 1.19 +
+- Docker (proximamente)
+- AWS Acount (Localstack)
+- Makefile
+
+## Build Lambda Ingest Logs
+
+```bash
+make build-lambda-logs
+```
+
+## Build Lambda Notify Balance
+
+```bash
+make build-lambda-pdf
+```
+
+## Create infrastructure
+
+```bash
+make infra-init
+make infra-plan
+make infra-apply
+```
+
+## Delete infrastructure
+
+```bash
+make infra-destroy
+```
+
+## Deploy App
+
+work in progress
 
