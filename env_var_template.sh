@@ -1,5 +1,5 @@
 echo "🛠️ Load Var Env"
-export COMPANY=story
+export COMPANY=stori
 export DEPTO=balance
 export APP_INGEST="ingest_logs"
 export APP_NOTIFY="notify"

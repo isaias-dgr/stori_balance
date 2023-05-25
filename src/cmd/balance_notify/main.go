@@ -5,14 +5,14 @@ import (
 
 	"github.com/aws/aws-lambda-go/lambda"
 
-	adapter "github.com/isaias-dgr/story-balance/src/internal/adapters/input/lambda"
-	mailer "github.com/isaias-dgr/story-balance/src/internal/adapters/output/mailer"
-	notifier "github.com/isaias-dgr/story-balance/src/internal/adapters/output/notifier"
-	repo "github.com/isaias-dgr/story-balance/src/internal/adapters/output/repository"
-	storage "github.com/isaias-dgr/story-balance/src/internal/adapters/output/storage"
+	adapter "github.com/isaias-dgr/stori-balance/src/internal/adapters/input/lambda"
+	mailer "github.com/isaias-dgr/stori-balance/src/internal/adapters/output/mailer"
+	notifier "github.com/isaias-dgr/stori-balance/src/internal/adapters/output/notifier"
+	repo "github.com/isaias-dgr/stori-balance/src/internal/adapters/output/repository"
+	storage "github.com/isaias-dgr/stori-balance/src/internal/adapters/output/storage"
 
-	writter "github.com/isaias-dgr/story-balance/src/internal/adapters/output/document"
-	usecase "github.com/isaias-dgr/story-balance/src/internal/core/use_case"
+	writter "github.com/isaias-dgr/stori-balance/src/internal/adapters/output/document"
+	usecase "github.com/isaias-dgr/stori-balance/src/internal/core/use_case"
 	"github.com/sirupsen/logrus"
 )
 

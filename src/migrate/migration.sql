@@ -1,4 +1,4 @@
-CREATE TABLE db_story_balance_notify_dev.transactions (
+CREATE TABLE db_stori_balance_notify_dev.transactions (
 	user_id BINARY(16) NOT NULL,
 	product varchar(100) NULL,
 	code varchar(100) NULL,

@@ -6,7 +6,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/ses"
-	"github.com/isaias-dgr/story-balance/src/internal/core/domain"
+	"github.com/isaias-dgr/stori-balance/src/internal/core/domain"
 	log "github.com/sirupsen/logrus"
 )
 

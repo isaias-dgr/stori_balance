@@ -9,7 +9,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/isaias-dgr/story-balance/src/internal/core/domain"
+	"github.com/isaias-dgr/stori-balance/src/internal/core/domain"
 )
 
 type Repository struct {

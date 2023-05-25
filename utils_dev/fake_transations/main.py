@@ -43,6 +43,6 @@ if __name__ == "__main__":
 
                 cont_general += cont
             client.upload_file(
-                file, 'bucket-story-balance-ingest-logs-dev', key)
+                file, 'bucket-stori-balance-ingest-logs-dev', key)
             os.remove(file)
     print(cont_general)

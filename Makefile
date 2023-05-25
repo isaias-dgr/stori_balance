@@ -5,7 +5,7 @@ default: init
 
 .PHONY: init
 init:
-	@echo "🤖 Story ingest Notify app"
+	@echo "🤖 stori ingest Notify app"
 
 
 .PHONY: build-lambda-log
@@ -34,28 +34,28 @@ localstack:
 
 .PHONY: infra-init
 infra-init:
-	@echo "💣 Destroy infra on localstack"
+	@echo "🪨 Destroy infra on localstack"
 	tflocal -chdir=infra/ init
 
 
 .PHONY: infra-plan
 infra-plan:
-	@echo "💣 Destroy infra on localstack"
+	@echo "🏗 Destroy infra on localstack"
 	tflocal -chdir=infra/ fmt
 	tflocal -chdir=infra/ plan 
 
 
 .PHONY: infra-apply
 infra-apply:
-	@echo "💣 Destroy infra on localstack $(APP_INGEST_SHORT)"
+	@echo "🏛️ Destroy infra on localstack $(APP_INGEST_SHORT)"
 
 	tflocal -chdir=infra/ apply -auto-approve
 
 .PHONY: infra-destroy
 infra-destroy:
-	@echo "💣 Destroy infra on localstack"
+	@echo "🏚 Destroy infra on localstack"
 	tflocal -chdir=infra/ destroy -auto-approve
 
 .PHONY: infra
 infra:  infra-init infra-plan infra-apply
-	@echo "💣 Destroy infra on localstack"
+	@echo "🏘 Destroy infra on localstack"

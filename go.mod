@@ -1,4 +1,4 @@
-module github.com/isaias-dgr/story-balance
+module github.com/isaias-dgr/stori-balance
 
 go 1.19
 

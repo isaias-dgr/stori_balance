@@ -5,8 +5,8 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	dto "github.com/isaias-dgr/story-balance/src/internal/adapters/dto/input"
-	usecase "github.com/isaias-dgr/story-balance/src/internal/core/use_case"
+	dto "github.com/isaias-dgr/stori-balance/src/internal/adapters/dto/input"
+	usecase "github.com/isaias-dgr/stori-balance/src/internal/core/use_case"
 )
 
 type funcNotify struct {

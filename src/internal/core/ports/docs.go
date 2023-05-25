@@ -3,7 +3,7 @@ package ports
 import (
 	"bytes"
 
-	"github.com/isaias-dgr/story-balance/src/internal/core/domain"
+	"github.com/isaias-dgr/stori-balance/src/internal/core/domain"
 )
 
 type Docs interface {

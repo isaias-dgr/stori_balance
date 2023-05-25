@@ -5,7 +5,7 @@ import (
 	"html/template"
 	"time"
 
-	"github.com/isaias-dgr/story-balance/src/internal/core/domain"
+	"github.com/isaias-dgr/stori-balance/src/internal/core/domain"
 	log "github.com/sirupsen/logrus"
 )
 

@@ -4,10 +4,10 @@ import (
 	"os"
 
 	"github.com/aws/aws-lambda-go/lambda"
-	adapter "github.com/isaias-dgr/story-balance/src/internal/adapters/input/lambda"
-	queue "github.com/isaias-dgr/story-balance/src/internal/adapters/output/queue"
-	storage "github.com/isaias-dgr/story-balance/src/internal/adapters/output/storage"
-	usecase "github.com/isaias-dgr/story-balance/src/internal/core/use_case"
+	adapter "github.com/isaias-dgr/stori-balance/src/internal/adapters/input/lambda"
+	queue "github.com/isaias-dgr/stori-balance/src/internal/adapters/output/queue"
+	storage "github.com/isaias-dgr/stori-balance/src/internal/adapters/output/storage"
+	usecase "github.com/isaias-dgr/stori-balance/src/internal/core/use_case"
 	"github.com/sirupsen/logrus"
 )
 
