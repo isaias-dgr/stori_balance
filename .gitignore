@@ -26,6 +26,7 @@ go.work
 # End of https://www.toptal.com/developers/gitignore/api/go
 # bin/
 tmp/
+bin/
 __pycache__
 .terraform/
 *lock.hcl
@@ -35,4 +36,4 @@ volume
 builds/
 *.tfstate.lock.info
 localstack_providers_override.tf
-
+main.zip

@@ -35,26 +35,26 @@ localstack:
 .PHONY: infra-init
 infra-init:
 	@echo "💣 Destroy infra on localstack"
-	terraform -chdir=infra/ init
+	tflocal -chdir=infra/ init
 
 
 .PHONY: infra-plan
 infra-plan:
 	@echo "💣 Destroy infra on localstack"
-	terraform -chdir=infra/ fmt
-	terraform -chdir=infra/ plan 
+	tflocal -chdir=infra/ fmt
+	tflocal -chdir=infra/ plan 
 
 
 .PHONY: infra-apply
 infra-apply:
 	@echo "💣 Destroy infra on localstack $(APP_INGEST_SHORT)"
 
-	terraform -chdir=infra/ apply -auto-approve
+	tflocal -chdir=infra/ apply -auto-approve
 
 .PHONY: infra-destroy
 infra-destroy:
 	@echo "💣 Destroy infra on localstack"
-	terraform -chdir=infra/ destroy -auto-approve
+	tflocal -chdir=infra/ destroy -auto-approve
 
 .PHONY: infra
 infra:  infra-init infra-plan infra-apply
